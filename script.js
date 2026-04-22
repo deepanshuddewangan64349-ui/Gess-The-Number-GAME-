@@ -9,12 +9,8 @@ let msg = document.getElementById("msg");
 
 submitBtn.addEventListener("click",() => {
     msg.innerText = "";
-    setTimeout(checkNumber(),5000);
-  
-});
-
-function checkNumber() {
-  guessNum = inputVal.value;
+    setTimeout(()=>{
+        guessNum = inputVal.value;
   if (guessNum > gameNum) {
     msg.innerText = "you giving number is big. please guess again";
   } else if (guessNum < gameNum) {
@@ -22,9 +18,15 @@ function checkNumber() {
   } else {
     msg.innerText = "congratulations, you guess the right number";
   }
-}
+    },100);
+  
+});
+
+// function checkNumber() {
+  
+// }
 resetBtn.addEventListener("click",()=>{
     msg.innerText = "";
-    inputVal.value = "";
+    inputVal.value = "0";
     gameNum = Math.floor(Math.random() * 100) + 1;
 });
