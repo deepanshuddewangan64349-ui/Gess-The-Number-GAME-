@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    
+}
+h1{
+    text-align: center;
+    padding: 20px;
+    background-color: green;
+    display: block;
+}
+.contener{
+    background-color: antiquewhite;
+    text-align: center;
+    padding-top: 35vh;
+    padding-bottom: 35vh;
+    font-size: 30px;
+}
+input{
+    border-radius: 1.5rem;
+    font-size: 20px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+button{
+    background-color: aliceblue;
+    font-size: 20px;
+    border-radius: 1rem;
+    padding: 2px 0 2px 0;
+    padding: 5px;
+}
