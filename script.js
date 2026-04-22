@@ -1,17 +1,20 @@
 let gameNum = null;
-gameNum = Math.floor(Math.random() * 10) + 1;
+gameNum = Math.floor(Math.random() * 100) + 1;
 
 let guessNum = null;
 let inputVal = document.querySelector("input");
-let button = document.querySelector("button");
+let submitBtn = document.getElementById("submit");
+let resetBtn = document.getElementById("reset");
 let msg = document.getElementById("msg");
 
-button.addEventListener("click", () => {
-  checkNumber();
+submitBtn.addEventListener("click",() => {
+    msg.innerText = "";
+    setTimeout(checkNumber(),5000);
+  
 });
+
 function checkNumber() {
   guessNum = inputVal.value;
-  console.log(gameNum, guessNum);
   if (guessNum > gameNum) {
     msg.innerText = "you giving number is big. please guess again";
   } else if (guessNum < gameNum) {
@@ -20,3 +23,8 @@ function checkNumber() {
     msg.innerText = "congratulations, you guess the right number";
   }
 }
+resetBtn.addEventListener("click",()=>{
+    msg.innerText = "";
+    inputVal.value = "";
+    gameNum = Math.floor(Math.random() * 100) + 1;
+});
